@@ -102,9 +102,9 @@ if uploaded_file is not None:
 
         csv = output_df.to_csv(index=False).encode("utf-8")
 
-        st.subheader("⬇️ Download Predictions")
+        st.subheader("⬇️ Download Predictions, 0-Not Fraud, 1-Fraud")
         st.download_button(
-            label="Download fraud_predictions.csv, 0(Not Fraud): 1(Fraud)",
+            label="Download fraud_predictions.csv",
             data=csv,
             file_name="fraud_predictions.csv",
             mime="text/csv"
@@ -113,6 +113,5 @@ if uploaded_file is not None:
     except Exception as e:
         st.error("❌ Error processing file. Please check CSV format.")
         st.write(e)
-
 
 
