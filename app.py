@@ -77,7 +77,7 @@ if uploaded_file is not None:
         # Predictions
         # --------------------------------------------------
         y_prob = model.predict_proba(X_test)[:, 1]
-        y_pred = (y_prob > 0.7).astype(int)
+        y_pred = (y_prob > 0.5).astype(int)
 
         # --------------------------------------------------
         # Metrics
@@ -113,4 +113,5 @@ if uploaded_file is not None:
     except Exception as e:
         st.error("❌ Error processing file. Please check CSV format.")
         st.write(e)
+
 
